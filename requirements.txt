@@ -4,5 +4,6 @@ Flask-WTF==1.1.1
 WTForms==3.0.1
 qrcode==8.2
 reportlab==4.1.0
-pillow==10.1.0
+pillow==10.3.0
 gunicorn
+
