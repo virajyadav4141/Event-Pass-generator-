@@ -1,0 +1,8 @@
+Flask==2.3.3
+Flask-Login==0.6.3
+Flask-WTF==1.1.1
+WTForms==3.0.1
+qrcode==8.2
+reportlab==4.1.0
+pillow==10.1.0
+gunicorn

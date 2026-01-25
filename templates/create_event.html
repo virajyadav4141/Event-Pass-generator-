@@ -1,0 +1,25 @@
+{% extends "base.html" %}
+{% block content %}
+<div class="card">
+    <h2>Create Event</h2>
+    <form method="POST">
+        <label>Event Name</label>
+        <input type="text" name="name" required>
+        <label>Date</label>
+        <input type="date" name="date" required>
+        <label>Sponsors (optional)</label>
+        <input type="text" name="sponsors">
+        <label>Total Passes</label>
+        <input type="number" name="total_passes" required>
+        <label>QR Width</label>
+        <input type="number" name="qr_width" value="150">
+        <label>QR Height</label>
+        <input type="number" name="qr_height" value="150">
+        <label>QR Margin</label>
+        <input type="number" name="qr_margin" value="10">
+        <label>Max Uses per Pass</label>
+        <input type="number" name="max_uses" value="1">
+        <button type="submit" class="btn btn-green">Create Event</button>
+    </form>
+</div>
+{% endblock %}
