@@ -58,6 +58,17 @@ def query_db(query, args=(), one=False):
     return (rv[0] if rv else None) if one else rv
 
 init_db()
+# --------- Auto create default admin user ---------
+try:
+    existing_admin = query_db("SELECT * FROM user WHERE username=?", ["admin"], one=True)
+    if not existing_admin:
+        query_db(
+            "INSERT INTO user (username,password_hash,role) VALUES (?,?,?)",
+            ["admin", generate_password_hash("admin123"), "admin"]
+        )
+except Exception as e:
+    print("Admin creation error:", e)
+
 
 # ---------------- Utilities ----------------
 def generate_pass_id():
@@ -247,3 +258,4 @@ def generate_passes(event_id):
 # ---------------- Run ----------------
 if __name__ == "__main__":
     app.run()
+
