@@ -13,7 +13,7 @@ This system can be used for:
 
 ## 👨‍💻 Developed By
 
-**V9 Technologies**
+**V9 Technology**
 
 
 
