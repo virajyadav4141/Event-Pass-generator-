@@ -87,7 +87,7 @@ def admin_dashboard():
 def create_event():
     if session.get("role") != "admin":
         return redirect(url_for("login"))
-    name = request.form["name"]
+    name = request.form.get('name')
     date = request.form["date"]
     sponsors = request.form.get("sponsors","")
     total_passes = int(request.form["total_passes"])
@@ -240,5 +240,6 @@ def generate_passes(event_id):
 
 if __name__ == "__main__":
     app.run(debug=True)
+
 
 
