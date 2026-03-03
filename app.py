@@ -239,6 +239,6 @@ def generate_passes(event_id):
                      mimetype="application/pdf")
 
 if __name__ == "__main__":
-    app.run()
+    app.run(debug=True)
 
 
