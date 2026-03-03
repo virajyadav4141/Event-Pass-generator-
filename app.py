@@ -16,8 +16,18 @@ DATABASE_URL = os.environ.get("DATABASE_URL", "")
 print("DATABASE_URL RAW:", repr(DATABASE_URL))
 
 # ---------------- Database ----------------
+import psycopg2
+import os
+
 def get_db():
-    return psycopg2.connect(DATABASE_URL, sslmode="require")
+    return psycopg2.connect(
+        host="db.hnuenmrgcmhtrbgclfjz.supabase.co",
+        database="postgres",
+        user="postgres",
+        password="YourActualPasswordHere",
+        port=5432,
+        sslmode="require"
+    )
 
 def query_db(query, args=(), one=False):
     conn = get_db()
@@ -241,6 +251,7 @@ def generate_passes(event_id):
 
 if __name__ == "__main__":
     app.run(debug=True)
+
 
 
 
