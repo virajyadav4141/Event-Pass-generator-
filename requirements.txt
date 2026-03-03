@@ -6,3 +6,4 @@ qrcode[pil]
 reportlab==4.1.0
 Pillow>=10.3.0
 gunicorn
+psycopg2-binary
