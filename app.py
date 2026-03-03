@@ -21,11 +21,11 @@ import os
 
 def get_db():
     return psycopg2.connect(
-        host="db.hnuenmrgcmhtrbgclfjz.supabase.co",
+        host="aws-0-ap-south-1.pooler.supabase.com",
         database="postgres",
-        user="postgres",
-        password="YourActualPasswordHere",
-        port=5432,
+        user="postgres.xxxxx",   # from Supabase pooler
+        password="YourPasswordHere",
+        port=6543,
         sslmode="require"
     )
 
@@ -251,6 +251,7 @@ def generate_passes(event_id):
 
 if __name__ == "__main__":
     app.run(debug=True)
+
 
 
 
