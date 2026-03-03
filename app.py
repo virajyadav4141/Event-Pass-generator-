@@ -12,7 +12,8 @@ import os
 app = Flask(__name__)
 app.secret_key = "supersecretkey"
 
-DATABASE_URL = os.environ.get("DATABASE_URL", "").strip()
+DATABASE_URL = os.environ.get("DATABASE_URL", "")
+print("DATABASE_URL RAW:", repr(DATABASE_URL))
 
 # ---------------- Database ----------------
 def get_db():
@@ -240,6 +241,7 @@ def generate_passes(event_id):
 
 if __name__ == "__main__":
     app.run(debug=True)
+
 
 
 
