@@ -1,9 +1,12 @@
 # database_setup.py
-import sqlite3
-from werkzeug.security import generate_password_hash
+import psycopg2
+import os
 
-conn = sqlite3.connect('database.db')
-c = conn.cursor()
+DATABASE_URL = os.environ.get("DATABASE_URL")
+
+def get_db_connection():
+    conn = psycopg2.connect(DATABASE_URL)
+    return conn
 
 # Users table
 c.execute('''
@@ -49,3 +52,4 @@ c.execute("INSERT OR IGNORE INTO user (username, password_hash, role) VALUES (?,
 conn.commit()
 conn.close()
 print("Database initialized with default admin: admin/admin123")
+
