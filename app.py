@@ -16,7 +16,7 @@ DATABASE_URL = os.environ.get("DATABASE_URL")
 
 # ---------------- Database ----------------
 def get_db():
-    return psycopg2.connect(DATABASE_URL, sslmode="require"))
+    return psycopg2.connect(DATABASE_URL, sslmode="require")
 
 def query_db(query, args=(), one=False):
     conn = get_db()
@@ -240,4 +240,5 @@ def generate_passes(event_id):
 
 if __name__ == "__main__":
     app.run()
+
 
